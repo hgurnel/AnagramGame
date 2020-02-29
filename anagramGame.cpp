@@ -10,7 +10,7 @@ AnagramGame::AnagramGame(const string &word) : m_anagramWord(word){}
 
 void AnagramGame::SubmitWord(string &word)
 {
-	cout << "\nSubmitting word " + word << endl;
+	cout << "\nSubmitting word: " + word << endl;
 	m_userWord = word;
 
 	if (this->IsUserWordValid(m_userWord, m_anagramWord))
@@ -92,12 +92,12 @@ bool AnagramGame::IsAnagram(const string &filePath)
 			int result = m_userWord.compare(line);
 			if (result == 0)
 			{
-				cout << "\nANAGRAM" << endl;
+				cout << "\nIt is an anagram of: " + m_anagramWord << endl;
 				return true;
 				break;
 			}
         }
-		cout << "\nNOT ANAGRAM" << endl;
+		cout << "\nIt is not an anagram of: " + m_anagramWord << endl;
 		return false;
     }
     else
