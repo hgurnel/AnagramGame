@@ -52,9 +52,9 @@ bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 {
 	string sU = sUser;
 	string sA = sAnagram;
-	remove_if(sU.begin(), sU.end(), isspace); // Remove blank spaces
+	// Remove blank spaces
 	remove_if(sA.begin(), sA.end(), isspace);
-	sort(sU.begin(), sU.end()); // Sort alphabetically
+	// Sort alphabetically, so user word and anagram word have the same order
 	sort(sA.begin(), sA.end());
 	int nU = sU.size();
 	int nA = sA.size();
