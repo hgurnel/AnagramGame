@@ -49,8 +49,7 @@ public:
 	int GetScoreAtPosition(int position);
 
 private:
-
 	string m_anagramWord;
-	string m_submittedWord;
+	string m_userWord;
 };
 
