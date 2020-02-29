@@ -5,9 +5,8 @@ using namespace std;
 
 void UI::Start()
 {
-	gameInterface = new AnagramGame();
 	string anagramWord = "areallylongword";
-	gameInterface->setAnagramWord(anagramWord);
+	gameInterface = new AnagramGame(anagramWord);
 	string userWord = "";
 	string pathToWordList = "wordlist.txt";
 
@@ -16,22 +15,10 @@ void UI::Start()
 		cout << "\nEnter a word using letters from : " + anagramWord + "\n\n>";
 		cin >> userWord;
 		cout << "\n";
-		
-		// Check if submitted word is valid 
-		if (gameInterface->CheckSubmittedWord())
-		{
-			cout << "Submitting word " + userWord << endl;
-			gameInterface->setSubmittedWord(userWord);
-			gameInterface->isAnagram(pathToWordList);
-			PrintScores();
-		}
-		// Otherwise ask again for user input
-		else
-		{
-			cout << "\nWRONG INPUT, Start again. Enter a word using letters from : " + anagramWord + "\n\n>";
-			cin >> userWord;
-			cout << "\n";
-		}
+
+		gameInterface->SubmitWord(userWord);
+		gameInterface->IsAnagram(pathToWordList);
+		PrintScores();
 	}
 }
 
