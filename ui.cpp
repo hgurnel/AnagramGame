@@ -5,7 +5,7 @@ using namespace std;
 
 void UI::Start()
 {
-	string anagramWord = "areallylongword";
+	string anagramWord = "a really long word";
 	gameInterface = new AnagramGame(anagramWord);
 	string userWord = "";
 	string pathToWordList = "wordlist.txt";
