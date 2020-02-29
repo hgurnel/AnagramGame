@@ -22,8 +22,9 @@ public:
 	/// <param name="word">Word submitted by the user</param>
 	void SubmitWord(string &word);
 
-	/// HG:check if submittedWord is a substring of anagramWord
-	bool CheckSubmittedWord();
+	// Check if submittedWord is a substring of anagramWord
+	bool IsUserWordValid(const string &userWord, const string &anagramWord);
+
 	// Check if string 1 is a substring of string 2 (no order)
 	bool IsSubstring(const string& s1, const string& s2);
 
