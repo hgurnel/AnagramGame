@@ -9,6 +9,7 @@ class AnagramGame
 {
 public:
 	AnagramGame() {}
+	AnagramGame(const string& word);
 	virtual ~AnagramGame() {}
 
 	/// <summary>

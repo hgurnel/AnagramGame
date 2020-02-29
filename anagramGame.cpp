@@ -2,7 +2,9 @@
 
 using namespace std;
 
-void AnagramGame::SubmitWord(std::string word)
+// Constructor
+AnagramGame::AnagramGame(const string &word) : m_anagramWord(word){}
+
 void AnagramGame::SubmitWord(string &word)
 {
 	cout << "\nSubmitting word " + word << endl;
