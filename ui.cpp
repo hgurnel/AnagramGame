@@ -18,7 +18,7 @@ void UI::Start()
 
 		gameInterface->SubmitWord(userWord);
 		gameInterface->IsAnagram(pathToWordList);
-		PrintScores();
+		//PrintScores();
 	}
 }
 
