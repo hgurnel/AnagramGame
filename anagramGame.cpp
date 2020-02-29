@@ -26,23 +26,9 @@ void AnagramGame::SubmitWord(string &word)
 bool AnagramGame::IsUserWordValid(const string &userWord, const string &anagramWord)
 {
 	if (this->IsSubstring(userWord, anagramWord))
-}
-
-bool AnagramGame::CheckSubmittedWord()
-{
-	string submittedWord = this->getSubmittedWord();
-	string anagramWord = this->getAnagramWord();
-
-	if (anagramWord.find(submittedWord) != std::string::npos)
-	{
-		cout << "TRUE" << endl;
 		return true;
-	}
 	else
-	{
-		cout << "FALSE" << endl;
 		return false;
-}
 }
 
 bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
