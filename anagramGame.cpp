@@ -80,7 +80,7 @@ bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 
 bool AnagramGame::IsAnagram(const string &filePath)
 {
-    ifstream inputStream(filePath, ios::in);
+    ifstream inputStream(filePath.c_str(), ios::in);
 
     if (inputStream)
     {
@@ -89,20 +89,20 @@ bool AnagramGame::IsAnagram(const string &filePath)
         // Read file line by line and check for a match with submittedWord
         while (std::getline(inputStream, line))
         {
-			int result = submittedWord.compare(line);
+			int result = m_userWord.compare(line);
 			if (result == 0)
 			{
-				cout << "ANAGRAM" << endl;
+				cout << "\nANAGRAM" << endl;
 				return true;
 				break;
 			}
         }
-		cout << "NOT ANAGRAM" << endl;
+		cout << "\nNOT ANAGRAM" << endl;
 		return false;
     }
     else
     {
-        cerr << "Cannot open " << filePath << endl;
+        cerr << "\nCannot open " << filePath << endl;
     }
 }
 
