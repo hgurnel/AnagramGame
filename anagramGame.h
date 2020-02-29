@@ -29,8 +29,8 @@ public:
 	// Check if string 1 is a substring of string 2 (no order)
 	bool IsSubstring(const string& s1, const string& s2);
 
-	/// HG: check if submittedWord belongs to the word list
-	bool isAnagram(string filePath);
+	// Check if submittedWord belongs to the word list
+	bool IsAnagram(const string &filePath);
 
 	/// <summary>
 	/// Return word entry at given position in the high score list, 0 being the 

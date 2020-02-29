@@ -90,6 +90,8 @@ bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 		return false;
 }
 
+bool AnagramGame::IsAnagram(const string &filePath)
+{
     ifstream inputStream(filePath, ios::in);
 
     if (inputStream)
