@@ -25,6 +25,8 @@ public:
 
 	/// HG:check if submittedWord is a substring of anagramWord
 	bool CheckSubmittedWord();
+	// Check if string 1 is a substring of string 2 (no order)
+	bool IsSubstring(const string& s1, const string& s2);
 
 	/// HG: check if submittedWord belongs to the word list
 	bool isAnagram(string filePath);

@@ -24,9 +24,51 @@ bool AnagramGame::CheckSubmittedWord()
 	}
 }
 
-bool AnagramGame::isAnagram(string filePath)
+bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 {
-	string submittedWord = this->getSubmittedWord();
+	string sU = sUser;
+	string sA = sAnagram;
+	remove_if(sU.begin(), sU.end(), isspace); // Remove blank spaces
+	remove_if(sA.begin(), sA.end(), isspace);
+	sort(sU.begin(), sU.end()); // Sort alphabetically
+	sort(sA.begin(), sA.end());
+	int nU = sU.size();
+	int nA = sA.size();
+	
+	// To start the inner for-loop where it was stopped when the break statement was run previously
+	int index = 0;
+
+	bool isCharInAnagramWord = false;
+	bool isWordValid = true;
+
+	for (int i = 0; i < nU; i++)
+	{
+		isCharInAnagramWord = false;
+
+		for (int j = index; j < nA; j++)
+		{
+			if (sU[i] == sA[j])
+			{
+				isCharInAnagramWord = true;
+				// Next time time, the inner for-loop should start one step after the index where the break statement was run 
+				index = j+1;
+				break;
+			}
+		}
+
+		if (!isCharInAnagramWord)
+		{
+			isWordValid = false;
+			break;
+		}			
+	}
+
+	if (isWordValid)
+		return true;
+	else
+		return false;
+}
+
     ifstream inputStream(filePath, ios::in);
 
     if (inputStream)
