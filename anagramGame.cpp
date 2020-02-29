@@ -1,4 +1,5 @@
 #include "AnagramGame.h"
+#include <algorithm>
 
 using namespace std;
 
