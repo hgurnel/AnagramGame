@@ -3,6 +3,24 @@
 using namespace std;
 
 void AnagramGame::SubmitWord(std::string word)
+void AnagramGame::SubmitWord(string &word)
+{
+	cout << "\nSubmitting word " + word << endl;
+	m_userWord = word;
+
+	if (this->IsUserWordValid(m_userWord, m_anagramWord))
+	{
+		cout << "\nValid word" << endl;
+	}
+	else
+	{
+		cout << "\nWRONG. Enter letters from : " + m_anagramWord << endl;
+		cin >> word;
+
+		this->SubmitWord(word);
+	}
+}
+
 {
 	cout << "Submitting word " + word;
 }

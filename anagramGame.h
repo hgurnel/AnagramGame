@@ -21,7 +21,7 @@ public:
 	/// score should rank higher. 
 	/// </summary>
 	/// <param name="word">Word submitted by the user</param>
-	void SubmitWord(string word);
+	void SubmitWord(string &word);
 
 	/// HG:check if submittedWord is a substring of anagramWord
 	bool CheckSubmittedWord();
