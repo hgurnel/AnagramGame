@@ -48,16 +48,6 @@ public:
 	/// <param name="position">Position index in the high score list.</param>
 	int GetScoreAtPosition(int position);
 
-	/// SETTERS
-
-	void setAnagramWord(string word);
-	void setSubmittedWord(string word);
-
-	/// GETTERS
-
-	string getAnagramWord();
-	string getSubmittedWord();
-
 private:
 
 	string m_anagramWord;

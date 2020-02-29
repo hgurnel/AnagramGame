@@ -123,28 +123,4 @@ int AnagramGame::GetScoreAtPosition(int position)
 	return -1;
 }
 
-/// SETTERS
-
-void AnagramGame::setAnagramWord(string word)
-{
-	m_anagramWord.assign(word);
-}
-
-void AnagramGame::setSubmittedWord(string word)
-{
-	m_submittedWord.assign(word);
-}
-
-/// GETTERS
-
-string AnagramGame::getAnagramWord()
-{
-	return m_anagramWord;
-}
-
-string AnagramGame::getSubmittedWord()
-{
-	return m_submittedWord;
-}
-
 
