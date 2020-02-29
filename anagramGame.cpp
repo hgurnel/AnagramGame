@@ -55,7 +55,7 @@ bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 	sort(sA.begin(), sA.end());
 	int nU = sU.size();
 	int nA = sA.size();
-	
+
 	// To start the inner for-loop where it was stopped when the break statement was run previously
 	int index = 0;
 
@@ -72,7 +72,7 @@ bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 			{
 				isCharInAnagramWord = true;
 				// Next time time, the inner for-loop should start one step after the index where the break statement was run 
-				index = j+1;
+				index = j + 1;
 				break;
 			}
 		}
@@ -81,7 +81,7 @@ bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 		{
 			isWordValid = false;
 			break;
-		}			
+		}
 	}
 
 	if (isWordValid)
