@@ -14,14 +14,11 @@ void AnagramGame::SubmitWord(string &word)
 	m_userWord = word;
 
 	if (this->IsUserWordValid(m_userWord, m_anagramWord))
-	{
 		cout << "\nValid word" << endl;
-	}
 	else
 	{
 		cout << "\nWRONG. Enter letters from : " + m_anagramWord << "\n" << endl;
 		cin >> word;
-
 		this->SubmitWord(word);
 	}
 }
