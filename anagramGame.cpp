@@ -53,10 +53,12 @@ bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 	int nU = sU.size();
 	int nA = sA.size();
 
-	// To start the inner for-loop where it was stopped when the break statement was run previously
+	// Create an index to start the inner for-loop where it was stopped previously
 	int index = 0;
 
+	// Tells whether one char of user word is present in anagram word
 	bool isCharInAnagramWord = false;
+	// Tells whether all the chars of user word form a substring of anagram word
 	bool isWordValid = true;
 
 	for (int i = 0; i < nU; i++)
@@ -68,7 +70,8 @@ bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
 			if (sU[i] == sA[j])
 			{
 				isCharInAnagramWord = true;
-				// Next time time, the inner for-loop should start one step after the index where the break statement was run 
+				// Next time, the inner for-loop should start one step after the index where the break statement was run 
+				// This way, you don't check twice the same letters of the anagramWord
 				index = j + 1;
 				break;
 			}
@@ -102,6 +105,7 @@ bool AnagramGame::IsAnagram(const string &filePath)
 			if (result == 0)
 			{
 				cout << "\nIt is an anagram of: " + m_anagramWord << endl;
+
 				return true;
 				break;
 			}
@@ -112,7 +116,9 @@ bool AnagramGame::IsAnagram(const string &filePath)
     else
     {
         cerr << "\nCannot open " << filePath << endl;
+		return false;
     }
+}
 
 void AnagramGame::UpdateTopScores(const string& userWord)
 {
