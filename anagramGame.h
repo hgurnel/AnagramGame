@@ -7,7 +7,7 @@ using namespace std;
 class AnagramGame
 {
 public:
-	AnagramGame() {}
+	AnagramGame();
 	AnagramGame(const string& word);
 	virtual ~AnagramGame() {}
 

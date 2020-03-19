@@ -5,8 +5,9 @@
 
 using namespace std;
 
-// Constructor
-AnagramGame::AnagramGame(const string &word) : m_anagramWord(word){}
+// Constructors
+AnagramGame::AnagramGame() : m_anagramWord("") {}
+AnagramGame::AnagramGame(const string &word) : m_anagramWord(word) {}
 
 void AnagramGame::SubmitWord(string &word)
 {
