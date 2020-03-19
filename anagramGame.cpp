@@ -27,10 +27,17 @@ void AnagramGame::SubmitWord(string &word)
 
 bool AnagramGame::IsUserWordValid(const string &userWord, const string &anagramWord)
 {
-	if (this->IsSubstring(userWord, anagramWord))
-		return true;
+	if (userWord.length() <= anagramWord.length())
+	{
+		if (this->IsSubstring(userWord, anagramWord))
+			return true;
+		else
+			return false;
+	}
 	else
+	{
 		return false;
+	}
 }
 
 bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
