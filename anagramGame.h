@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <map>
 
 using namespace std;
 
@@ -51,5 +52,7 @@ public:
 private:
 	string m_anagramWord;
 	string m_userWord;
+
+	multimap<int, string> m_scores;
 };
 
