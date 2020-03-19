@@ -17,8 +17,11 @@ void UI::Start()
 		cout << "\n";
 
 		gameInterface->SubmitWord(userWord);
-		gameInterface->IsAnagram(pathToWordList);
-		//PrintScores();
+
+		if (gameInterface->IsAnagram(pathToWordList))
+		{
+			gameInterface->UpdateTopScores(userWord);
+		}
 	}
 }
 
