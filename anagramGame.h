@@ -32,6 +32,9 @@ public:
 	// Check if submittedWord belongs to the word list
 	bool IsAnagram(const string &filePath);
 
+	// Update the array containing the best scores
+	void UpdateTopScores(const string &userWord);
+
 	/// <summary>
 	/// Return word entry at given position in the high score list, 0 being the 
 	/// highest (best score) and 9 the lowest. 

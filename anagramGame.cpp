@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <iterator>
 
 using namespace std;
 
@@ -105,6 +106,36 @@ bool AnagramGame::IsAnagram(const string &filePath)
     {
         cerr << "\nCannot open " << filePath << endl;
     }
+
+void AnagramGame::UpdateTopScores(const string& userWord)
+{
+	int key = userWord.length();
+
+	if(m_scores.count(key)==0)
+		m_scores.insert(std::pair<int, string>(userWord.length(), userWord));
+	else
+	{
+		for (auto itr = m_scores.begin(); itr != m_scores.end(); itr++)
+		{
+			if (itr->first == key)
+			{
+				// Update score without duplicates
+				if (itr->second != userWord)
+				{
+					m_scores.insert(std::pair<int, string>(userWord.length(), userWord));
+				}
+			}
+		}
+	}
+
+	cout << "\nCOUNT for key " << key << ": " << m_scores.count(key) << endl;
+	
+	cout << "\n----- TOP SCORES -----\n" << endl;
+	
+	for (std::pair<int, string> elem : m_scores)
+		std::cout << elem.first << " :: " << elem.second << std::endl;
+
+	cout << "\n----------------------\n" << endl;
 }
 
 std::string AnagramGame::GetWordEntryAtPosition(int position)
