@@ -27,7 +27,7 @@ public:
 	bool IsUserWordValid(const string &userWord, const string &anagramWord);
 
 	// Check if string 1 is a substring of string 2 (no order)
-	bool IsSubstring(const string& s1, const string& s2);
+	bool IsSubstring(const string &s1, const string &s2);
 
 	// Check if submittedWord belongs to the word list
 	bool IsAnagram(const string &filePath);
