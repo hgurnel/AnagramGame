@@ -12,7 +12,8 @@ void UI::Start()
 
 	while (true)
 	{
-		cout << "\nEnter a word using letters from : " + anagramWord + "\n\n>";
+		cout << "\n //////////// S T A R T ////////////" << endl;
+		cout << "Enter a word using letters from : " + anagramWord + "\n\n>";
 		cin >> userWord;
 		cout << "\n";
 

@@ -16,10 +16,11 @@ void AnagramGame::SubmitWord(string &word)
 	m_userWord = word;
 
 	if (this->IsUserWordValid(m_userWord, m_anagramWord))
-		cout << "\nValid word" << endl;
+		cout << "\nValid word: " << word << " is a substring of: " + m_anagramWord << endl;
 	else
 	{
-		cout << "\nWRONG. Enter letters from : " + m_anagramWord << "\n" << endl;
+		cout << "\nInvalid word: " << word << " is not a substring of: " + m_anagramWord << endl;
+		cout << "\nEnter a word using letters from : " + m_anagramWord + "\n\n>";
 		cin >> word;
 		this->SubmitWord(word);
 	}
@@ -104,13 +105,13 @@ bool AnagramGame::IsAnagram(const string &filePath)
 			int result = m_userWord.compare(line);
 			if (result == 0)
 			{
-				cout << "\nIt is an anagram of: " + m_anagramWord << endl;
+				cout << "\nGood job ! " << m_userWord << " is an anagram of: " + m_anagramWord << endl;
 
 				return true;
 				break;
 			}
         }
-		cout << "\nIt is not an anagram of: " + m_anagramWord << endl;
+		cout << "\nWrong answer ! " << m_userWord << " is not an anagram of: " + m_anagramWord << endl;
 		return false;
     }
     else
@@ -124,8 +125,11 @@ void AnagramGame::UpdateTopScores(const string& userWord)
 {
 	int key = userWord.length();
 
-	if(m_scores.count(key)==0)
+	if (m_scores.count(key) == 0)
+	{
+		cout << "\nEMPTY" << endl;
 		m_scores.insert(std::pair<int, string>(userWord.length(), userWord));
+	}
 	else
 	{
 		for (auto itr = m_scores.begin(); itr != m_scores.end(); itr++)
