@@ -6,8 +6,6 @@ class UI
 public:
 	void Start();
 private:
-	void PrintScores();
-
 	AnagramGame* gameInterface;
 };
 

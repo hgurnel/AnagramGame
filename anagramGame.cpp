@@ -155,15 +155,3 @@ void AnagramGame::UpdateTopScores(const string& userWord)
 
 	cout << "\n----------------------\n" << endl;
 }
-
-std::string AnagramGame::GetWordEntryAtPosition(int position)
-{
-	return "";
-}
-
-int AnagramGame::GetScoreAtPosition(int position)
-{
-	return -1;
-}
-
-

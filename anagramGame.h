@@ -35,23 +35,6 @@ public:
 	// Update the array containing the best scores
 	void UpdateTopScores(const string &userWord);
 
-	/// <summary>
-	/// Return word entry at given position in the high score list, 0 being the 
-	/// highest (best score) and 9 the lowest. 
-	/// </summary>
-	/// <returns>The word entry at the position in the high score list, 0 being the 
-	/// highest (best score) and 9 the lowest, or null if there is no entry at that position</returns>
-	/// <param name="position">Position index inot the high score list.</param>
-	string GetWordEntryAtPosition(int position);
-
-	/// <summary>
-	/// Return the score at given position in the high score list, 0 being the 
-	/// highest (best score) and 9 the lowest.
-	/// </summary>
-	/// <returns>The score at the position in the high score list, or -1 if there is no entry at that position.</returns>
-	/// <param name="position">Position index in the high score list.</param>
-	int GetScoreAtPosition(int position);
-
 private:
 	string m_anagramWord;
 	string m_userWord;

@@ -25,16 +25,3 @@ void UI::Start()
 		}
 	}
 }
-
-void UI::PrintScores()
-{
-	cout << "\n";
-	for (int i = 0; i < 10; i++)
-	{
-		int score = gameInterface->GetScoreAtPosition(i);
-		string word = gameInterface->GetWordEntryAtPosition(i);
-		string line = word + " " + to_string(score) + "\n";
-		cout << line;
-	}
-	cout << "\n";
-}
