@@ -5,32 +5,23 @@ using namespace std;
 
 void UI::Start()
 {
-	gameInterface = new AnagramGame();
-	string anagramWord = "areallylongword";
-	gameInterface->setAnagramWord(anagramWord);
+	string anagramWord = "a really long word";
+	gameInterface = new AnagramGame(anagramWord);
 	string userWord = "";
 	string pathToWordList = "wordlist.txt";
 
 	while (true)
 	{
-		cout << "\nEnter a word using letters from : " + anagramWord + "\n\n>";
+		cout << "\n //////////// S T A R T ////////////" << endl;
+		cout << "Form an anagram using letters from : " + anagramWord + "\n\n>";
 		cin >> userWord;
 		cout << "\n";
-		
-		// Check if submitted word is valid 
-		if (gameInterface->CheckSubmittedWord())
+
+		gameInterface->SubmitWord(userWord);
+
+		if (gameInterface->IsAnagram(pathToWordList))
 		{
-			cout << "Submitting word " + userWord << endl;
-			gameInterface->setSubmittedWord(userWord);
-			gameInterface->isAnagram(pathToWordList);
-			PrintScores();
-		}
-		// Otherwise ask again for user input
-		else
-		{
-			cout << "\nWRONG INPUT, Start again. Enter a word using letters from : " + anagramWord + "\n\n>";
-			cin >> userWord;
-			cout << "\n";
+			gameInterface->UpdateTopScores(userWord);
 		}
 	}
 }

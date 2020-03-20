@@ -1,14 +1,14 @@
 #pragma once
-#include <iostream>
-#include <fstream>
 #include <string>
+#include <map>
 
 using namespace std;
 
 class AnagramGame
 {
 public:
-	AnagramGame() {}
+	AnagramGame();
+	AnagramGame(const string& word);
 	virtual ~AnagramGame() {}
 
 	/// <summary>
@@ -21,13 +21,19 @@ public:
 	/// score should rank higher. 
 	/// </summary>
 	/// <param name="word">Word submitted by the user</param>
-	void SubmitWord(string word);
+	void SubmitWord(string &word);
 
-	/// HG:check if submittedWord is a substring of anagramWord
-	bool CheckSubmittedWord();
+	// Check if submittedWord is a substring of anagramWord
+	bool IsUserWordValid(const string &userWord, const string &anagramWord);
 
-	/// HG: check if submittedWord belongs to the word list
-	bool isAnagram(string filePath);
+	// Check if string 1 is a substring of string 2 (no order)
+	bool IsSubstring(const string &s1, const string &s2);
+
+	// Check if submittedWord belongs to the word list
+	bool IsAnagram(const string &filePath);
+
+	// Update the array containing the best scores
+	void UpdateTopScores(const string &userWord);
 
 	/// <summary>
 	/// Return word entry at given position in the high score list, 0 being the 
@@ -46,19 +52,10 @@ public:
 	/// <param name="position">Position index in the high score list.</param>
 	int GetScoreAtPosition(int position);
 
-	/// SETTERS
-
-	void setAnagramWord(string word);
-	void setSubmittedWord(string word);
-
-	/// GETTERS
-
-	string getAnagramWord();
-	string getSubmittedWord();
-
 private:
-
 	string m_anagramWord;
-	string m_submittedWord;
+	string m_userWord;
+
+	multimap<int, string> m_scores;
 };
 
