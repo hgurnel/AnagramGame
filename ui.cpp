@@ -13,7 +13,7 @@ void UI::Start()
 	while (true)
 	{
 		cout << "\n //////////// S T A R T ////////////" << endl;
-		cout << "Enter a word using letters from : " + anagramWord + "\n\n>";
+		cout << "Form an anagram using letters from : " + anagramWord + "\n\n>";
 		cin >> userWord;
 		cout << "\n";
 

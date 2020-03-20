@@ -20,7 +20,7 @@ void AnagramGame::SubmitWord(string &word)
 	else
 	{
 		cout << "\nInvalid word: " << word << " is not a substring of: " + m_anagramWord << endl;
-		cout << "\nEnter a word using letters from : " + m_anagramWord + "\n\n>";
+		cout << "\nForm an anagram using letters from : " + m_anagramWord + "\n\n>";
 		cin >> word;
 		this->SubmitWord(word);
 	}
