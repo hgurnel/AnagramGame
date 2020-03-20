@@ -36,9 +36,7 @@ bool AnagramGame::IsUserWordValid(const string &userWord, const string &anagramW
 			return false;
 	}
 	else
-	{
 		return false;
-	}
 }
 
 bool AnagramGame::IsSubstring(const string& sUser, const string& sAnagram)
@@ -127,7 +125,6 @@ void AnagramGame::UpdateTopScores(const string& userWord)
 
 	if (m_scores.count(key) == 0)
 	{
-		cout << "\nEMPTY" << endl;
 		m_scores.insert(std::pair<int, string>(userWord.length(), userWord));
 	}
 	else
