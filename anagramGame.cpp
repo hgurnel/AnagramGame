@@ -132,20 +132,24 @@ void AnagramGame::UpdateTopScores(const string& userWord)
 	}
 	else
 	{
+		bool isUserWordNew = true;
+
 		for (auto itr = m_scores.begin(); itr != m_scores.end(); itr++)
 		{
 			if (itr->first == key)
 			{
 				// Update score without duplicates
-				if (itr->second != userWord)
+				if (itr->second == userWord)
 				{
-					m_scores.insert(std::pair<int, string>(userWord.length(), userWord));
+					isUserWordNew = false;
+					cout << "\nWoops... " << m_userWord << " was already entered" << endl;
 				}
 			}
 		}
-	}
 
-	cout << "\nCOUNT for key " << key << ": " << m_scores.count(key) << endl;
+		if(isUserWordNew)
+			m_scores.insert(std::pair<int, string>(userWord.length(), userWord));
+	}
 	
 	cout << "\n----- TOP SCORES -----\n" << endl;
 	
